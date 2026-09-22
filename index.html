@@ -6,7 +6,7 @@
     <title>Alpha on Campus</title>
     <meta
       name="description"
-      content="Alpha on Campus — a free, no-pressure space for all campus students to explore life's biggest questions over good food and honest conversation. Hosted weekly at Saint Mary's University."
+      content="Alpha on Campus: a free, no-pressure space for all campus students to explore life's biggest questions over good food and honest conversation. Hosted weekly at Saint Mary's University."
     />
 
     <!--
@@ -482,12 +482,30 @@
         background: var(--cream);
       }
 
+      .gallery-feature {
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--radius);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        margin-bottom: 20px;
+      }
+
+      .gallery-feature img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+
+      .gallery-feature:hover img {
+        transform: scale(1.04);
+      }
+
       .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: 130px;
-        grid-auto-flow: dense;
-        gap: 16px;
+        column-count: 4;
+        column-gap: 16px;
       }
 
       .gallery-item {
@@ -496,26 +514,19 @@
         border-radius: var(--radius);
         border: 1px solid var(--line);
         box-shadow: var(--shadow);
+        margin-bottom: 16px;
+        break-inside: avoid;
       }
 
       .gallery-item img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: auto;
+        display: block;
         transition: transform 0.5s ease;
       }
 
       .gallery-item:hover img {
         transform: scale(1.06);
-      }
-
-      .gallery-item.big {
-        grid-column: span 2;
-        grid-row: span 2;
-      }
-
-      .gallery-item.tall {
-        grid-row: span 2;
       }
 
       .gallery-tag {
@@ -536,13 +547,13 @@
 
       @media (max-width: 860px) {
         .gallery-grid {
-          grid-template-columns: repeat(2, 1fr);
-          grid-auto-rows: 150px;
+          column-count: 2;
         }
+      }
 
-        .gallery-item.big {
-          grid-column: span 2;
-          grid-row: span 2;
+      @media (max-width: 480px) {
+        .gallery-grid {
+          column-count: 1;
         }
       }
 
@@ -929,7 +940,7 @@
           <p class="lede">
             Alpha is a free, no-strings-attached space where students from
             every campus gather over a shared meal to ask honest questions
-            about life, faith, and meaning — no experience or beliefs
+            about life, faith, and meaning. No experience or beliefs
             required, just curiosity.
           </p>
           <div class="hero-actions">
@@ -988,7 +999,7 @@
               <span class="eyebrow">What is Alpha?</span>
               <h2 style="margin-top:14px;">A conversation, not a lecture.</h2>
               <p>
-                Alpha runs in cities, campuses, and homes all over the world —
+                Alpha runs in cities, campuses, and homes all over the world,
                 and now it's coming to campus, hosted at Saint Mary's
                 University and open to students from any school. Each session
                 starts with a meal, moves into a short talk on a big question
@@ -1003,7 +1014,7 @@
                 are, bring a friend, and see where the conversation goes.
               </p>
               <div class="pull-quote">
-                "No pressure, no follow-up, no charge — just an honest space
+                "No pressure, no follow-up, no charge, just an honest space
                 to ask what you've always wondered about."
               </div>
             </div>
@@ -1015,7 +1026,7 @@
                 </span>
                 <div>
                   <h3>Share a free meal</h3>
-                  <p>Every session opens with dinner — good food is where good conversation starts.</p>
+                  <p>Every session opens with dinner. Good food is where good conversation starts.</p>
                 </div>
               </div>
               <div class="card">
@@ -1024,7 +1035,7 @@
                 </span>
                 <div>
                   <h3>Watch a short talk</h3>
-                  <p>A relaxed, honest look at a different big question each week — no jargon, no assumptions.</p>
+                  <p>A relaxed, honest look at a different big question each week, no jargon, no assumptions.</p>
                 </div>
               </div>
               <div class="card">
@@ -1033,7 +1044,7 @@
                 </span>
                 <div>
                   <h3>Join the discussion</h3>
-                  <p>Small groups, real talk. Say as much or as little as you want — every question counts.</p>
+                  <p>Small groups, real talk. Say as much or as little as you want. Every question counts.</p>
                 </div>
               </div>
               <div class="card">
@@ -1042,7 +1053,7 @@
                 </span>
                 <div>
                   <h3>All backgrounds welcome</h3>
-                  <p>Whether you're curious, skeptical, or somewhere in between — you belong here.</p>
+                  <p>Whether you're curious, skeptical, or somewhere in between, you belong here.</p>
                 </div>
               </div>
             </div>
@@ -1057,17 +1068,18 @@
             <span class="eyebrow">A look inside</span>
             <h2>What a Wednesday night actually looks like.</h2>
             <p>
-              Real photos from real Alpha nights — good food, full couches,
+              Real photos from real Alpha nights: good food, full couches,
               and conversations that go longer than planned.
             </p>
           </div>
 
+          <div class="gallery-feature" data-reveal>
+            <img src="images/gallery-1.jpg" alt="Friends sharing breakfast pastries and coffee around a tray at Alpha" loading="lazy" />
+            <span class="gallery-tag">Not perfect, just honest conversations.</span>
+          </div>
+
           <div class="gallery-grid" data-reveal>
-            <div class="gallery-item big">
-              <img src="images/gallery-1.jpg" alt="Friends sharing breakfast pastries and coffee around a tray at Alpha" loading="lazy" />
-              <span class="gallery-tag">Not perfect, just honest conversations.</span>
-            </div>
-            <div class="gallery-item tall">
+            <div class="gallery-item">
               <img src="images/gallery-9.jpg" alt="A group of students laughing together at an Alpha session" loading="lazy" />
             </div>
             <div class="gallery-item">
@@ -1076,7 +1088,7 @@
             <div class="gallery-item">
               <img src="images/gallery-2.jpg" alt="A student at an Alpha session" loading="lazy" />
             </div>
-            <div class="gallery-item tall">
+            <div class="gallery-item">
               <img src="images/gallery-4.jpg" alt="A large group of students gathered on a couch at Alpha" loading="lazy" />
               <span class="gallery-tag">Could ask anything.</span>
             </div>
@@ -1096,7 +1108,7 @@
       <!-- ================= BANNER ================= -->
       <section class="banner" data-reveal>
         <div class="container">
-          <h2>You don't need the right answers to show up — just the questions.</h2>
+          <h2>You don't need the right answers to show up, just the questions.</h2>
           <p>Free to attend · Open to all campus students · No commitment required</p>
         </div>
       </section>
@@ -1122,7 +1134,7 @@
               <div class="faq-a">
                 <p>
                   Not at all. Alpha is built for people who are exploring
-                  from scratch — whether you've never opened a Bible or grew
+                  from scratch, whether you've never opened a Bible or grew
                   up in church. Every talk starts from the beginning, no
                   prior knowledge assumed.
                 </p>
@@ -1150,7 +1162,7 @@
               </button>
               <div class="faq-a">
                 <p>
-                  Not at all — most people who come are exploring, curious,
+                  Not at all. Most people who come are exploring, curious,
                   or simply skeptical. Alpha is for anyone with questions
                   about life and faith, whatever you currently believe.
                 </p>
@@ -1177,7 +1189,7 @@
               </button>
               <div class="faq-a">
                 <p>
-                  Come whenever you can — every session stands on its own,
+                  Come whenever you can. Every session stands on its own,
                   so missing a week (or starting late) is no problem at all.
                 </p>
               </div>
@@ -1190,8 +1202,8 @@
               </button>
               <div class="faq-a">
                 <p>
-                  Not at all. Alpha is open to students from any campus —
-                  bring friends from other schools, no SMU enrollment
+                  Not at all. Alpha is open to students from any campus.
+                  Bring friends from other schools, no SMU enrollment
                   required.
                 </p>
               </div>
@@ -1220,8 +1232,8 @@
             <span class="eyebrow">Ready to come?</span>
             <h2>Reserve your spot</h2>
             <p>
-              Sign up in under a minute, or reach out with any questions —
-              we'd love to save you a seat at the table.
+              Sign up in under a minute, or reach out with any questions.
+              We'd love to save you a seat at the table.
             </p>
           </div>
 
@@ -1239,7 +1251,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37a4 4 0 1 1-7.914 1.174A4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
               </span>
               <h3>Follow along</h3>
-              <p>@campus_alpha — updates, reminders, and behind-the-scenes.</p>
+              <p>@campus_alpha: updates, reminders, and behind-the-scenes.</p>
             </a>
 
             <!-- EMAIL_LINK — replace with your real contact email -->
@@ -1253,7 +1265,7 @@
           </div>
 
           <p class="join-note">
-            <strong>First time?</strong> Just show up — walk-ins are always
+            <strong>First time?</strong> Just show up, walk-ins are always
             welcome too.
           </p>
         </div>
@@ -1273,8 +1285,8 @@
               />
             </div>
             <p>
-              A free, student-led space to explore life's biggest questions
-              — open to everyone, every background, every question.
+              A free, student-led space to explore life's biggest questions,
+              open to everyone, every background, every question.
             </p>
           </div>
 
