@@ -10,12 +10,8 @@
     />
 
     <!--
-      ============================================================
-      QUICK EDIT GUIDE — things still to update before this goes live:
-      1. Location:   search "[Building, Room]" in the hero facts strip
-                      and replace with the real room.
-      2. Email:      search "EMAIL_LINK" and replace the address.
-      ============================================================
+      Room/building for the "Where" fact still shows "To be decided" —
+      search for that text once a room is booked.
     -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -171,11 +167,9 @@
 
       .brand {
         display: flex;
-        align-items: center;
-        gap: 10px;
-        font-family: "Fraunces", serif;
-        font-weight: 700;
-        font-size: 1.15rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
       }
 
       .logo-img {
@@ -185,13 +179,24 @@
         flex-shrink: 0;
       }
 
-      .brand-text .sub {
-        display: block;
+      .campus-tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 3px 10px;
+        border-radius: 999px;
+        background: rgba(226, 98, 47, 0.1);
+        color: var(--accent-dark);
         font-family: "Inter", sans-serif;
-        font-weight: 500;
-        font-size: 0.68rem;
-        color: var(--ink-soft);
-        letter-spacing: 0.03em;
+        font-weight: 700;
+        font-size: 0.6rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .campus-tag.on-dark {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--gold);
       }
 
       nav.nav-links {
@@ -760,6 +765,23 @@
         line-height: 1.55;
       }
 
+      .contact-links {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-top: 4px;
+      }
+
+      .contact-links a {
+        color: var(--accent-dark);
+        font-weight: 700;
+        font-size: 0.92rem;
+      }
+
+      .contact-links a:hover {
+        text-decoration: underline;
+      }
+
       .join-note {
         text-align: center;
         margin-top: 32px;
@@ -790,12 +812,9 @@
 
       .footer-brand {
         display: flex;
-        align-items: center;
-        gap: 10px;
-        font-family: "Fraunces", serif;
-        font-weight: 700;
-        font-size: 1.15rem;
-        color: #fff9f2;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
       }
 
       .footer-brand p {
@@ -873,8 +892,10 @@
 
       @media (max-width: 720px) {
         nav.nav-links {
-          position: fixed;
-          inset: 62px 0 0 0;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
           background: var(--cream);
           flex-direction: column;
           align-items: flex-start;
@@ -942,10 +963,6 @@
           padding: 12px 18px;
         }
 
-        .brand-text .sub {
-          display: none;
-        }
-
         .nav-cta {
           gap: 8px;
         }
@@ -990,9 +1007,7 @@
             alt="Alpha"
             class="logo-img"
           />
-          <span class="brand-text">
-            <span class="sub">Open to All Campus Students</span>
-          </span>
+          <span class="campus-tag">For All Campus Students</span>
         </a>
 
         <nav class="nav-links" id="navLinks">
@@ -1056,7 +1071,7 @@
               </span>
               <div>
                 <div class="label">Where</div>
-                <div class="value">[Building, Room]<br /><span class="muted">Saint Mary's University</span></div>
+                <div class="value">To be decided<br /><span class="muted">Saint Mary's University</span></div>
               </div>
             </div>
             <div class="fact">
@@ -1349,14 +1364,17 @@
               <p>@campus_alpha: updates, reminders, and behind-the-scenes.</p>
             </a>
 
-            <!-- EMAIL_LINK — replace with your real contact email -->
-            <a class="join-card" href="mailto:alpha@smu.example">
+            <div class="join-card">
               <span class="icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
               </span>
-              <h3>Email us</h3>
-              <p>Questions about Alpha? Reach the team at [alpha@smu.example].</p>
-            </a>
+              <h3>Get in touch</h3>
+              <p>Questions about Alpha? Email or call/text the team.</p>
+              <div class="contact-links">
+                <a href="mailto:Campusalpha7@gmail.com">Campusalpha7@gmail.com</a>
+                <a href="tel:+19024418228">(902) 441-8228</a>
+              </div>
+            </div>
           </div>
 
           <p class="join-note">
@@ -1378,6 +1396,7 @@
                 alt="Alpha on Campus"
                 class="logo-img"
               />
+              <span class="campus-tag on-dark">For All Campus Students</span>
             </div>
             <p>
               A free, student-led space to explore life's biggest questions,
@@ -1396,7 +1415,8 @@
             <div class="footer-col">
               <h4>Connect</h4>
               <a href="https://www.instagram.com/campus_alpha?stkn=eG93cWtjeTMzNzc3" target="_blank" rel="noopener">Instagram</a>
-              <a href="mailto:alpha@smu.example">Email us</a>
+              <a href="mailto:Campusalpha7@gmail.com">Campusalpha7@gmail.com</a>
+              <a href="tel:+19024418228">(902) 441-8228</a>
             </div>
           </div>
         </div>
