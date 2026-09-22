@@ -3,16 +3,1343 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Beauty of Jesus' Love</title>
+    <title>Alpha on Campus</title>
+    <meta
+      name="description"
+      content="Alpha on Campus — a free, no-pressure space for all campus students to explore life's biggest questions over good food and honest conversation. Hosted weekly at Saint Mary's University."
+    />
+
+    <!--
+      ============================================================
+      QUICK EDIT GUIDE — things still to update before this goes live:
+      1. Location:   search "[Building, Room]" in the hero facts strip
+                      and replace with the real room.
+      2. Sign-up:    search "SIGNUP_LINK" and replace "#" with your
+                      Google Form / Eventbrite URL.
+      3. Email:      search "EMAIL_LINK" and replace the address.
+      ============================================================
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --cream: #faf5ee;
+        --cream-soft: #f3ead d;
+        --paper: #fffdfa;
+        --ink: #241a12;
+        --ink-soft: #5a4c3f;
+        --accent: #e2622f;
+        --accent-dark: #c14a20;
+        --plum: #6f2f59;
+        --gold: #d9a441;
+        --line: #e8ddcd;
+        --shadow: 0 20px 45px -20px rgba(66, 38, 15, 0.25);
+        --radius: 20px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", system-ui, sans-serif;
+        color: var(--ink);
+        background: var(--cream);
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Fraunces", Georgia, serif;
+        line-height: 1.1;
+        margin: 0;
+        font-weight: 600;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent-dark);
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 22px;
+        height: 2px;
+        background: var(--accent);
+        display: inline-block;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 14px 28px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: transform 0.2s ease, box-shadow 0.2s ease,
+          background 0.2s ease, color 0.2s ease;
+        white-space: nowrap;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: #fff9f2;
+        box-shadow: 0 14px 30px -12px rgba(226, 98, 47, 0.65);
+      }
+
+      .btn-primary:hover {
+        background: var(--accent-dark);
+      }
+
+      .btn-ghost {
+        background: transparent;
+        border-color: rgba(36, 26, 18, 0.18);
+        color: var(--ink);
+      }
+
+      .btn-ghost:hover {
+        border-color: var(--ink);
+      }
+
+      .btn-light {
+        background: #fff;
+        color: var(--accent-dark);
+      }
+
+      /* ---------- NAV ---------- */
+      header.site-nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(250, 245, 238, 0.85);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 24px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+        font-size: 1.15rem;
+      }
+
+      .logo-img {
+        height: 38px;
+        width: auto;
+        display: block;
+        flex-shrink: 0;
+      }
+
+      .brand-text .sub {
+        display: block;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 0.68rem;
+        color: var(--ink-soft);
+        letter-spacing: 0.03em;
+      }
+
+      nav.nav-links {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+
+      nav.nav-links a.link {
+        font-weight: 600;
+        font-size: 0.92rem;
+        color: var(--ink-soft);
+        padding: 6px 2px;
+        border-bottom: 2px solid transparent;
+        transition: color 0.2s ease, border-color 0.2s ease;
+      }
+
+      nav.nav-links a.link:hover {
+        color: var(--ink);
+        border-color: var(--accent);
+      }
+
+      .nav-cta {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 6px;
+      }
+
+      .menu-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--ink);
+        margin: 5px 0;
+        transition: 0.25s ease;
+      }
+
+      /* ---------- HERO ---------- */
+      .hero {
+        position: relative;
+        padding: 90px 0 70px;
+        overflow: hidden;
+      }
+
+      .hero::before,
+      .hero::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+        opacity: 0.35;
+        z-index: 0;
+      }
+
+      .hero::before {
+        width: 420px;
+        height: 420px;
+        background: var(--gold);
+        top: -160px;
+        right: -120px;
+      }
+
+      .hero::after {
+        width: 380px;
+        height: 380px;
+        background: var(--plum);
+        bottom: -180px;
+        left: -140px;
+        opacity: 0.25;
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        gap: 20px;
+        max-width: 760px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 5.4vw, 4.1rem);
+        margin-top: 14px;
+        letter-spacing: -0.01em;
+      }
+
+      .hero h1 em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .hero p.lede {
+        font-size: 1.18rem;
+        line-height: 1.6;
+        color: var(--ink-soft);
+        max-width: 620px;
+        margin-top: 6px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 14px;
+      }
+
+      .facts-strip {
+        position: relative;
+        z-index: 1;
+        margin-top: 48px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 26px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      .fact {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .fact .icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        background: rgba(226, 98, 47, 0.1);
+        color: var(--accent-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .fact .icon svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .fact .label {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+        color: var(--ink-soft);
+      }
+
+      .fact .value {
+        font-weight: 700;
+        font-size: 0.98rem;
+        margin-top: 2px;
+      }
+
+      .fact .value .muted {
+        font-weight: 500;
+        color: var(--ink-soft);
+        font-size: 0.85em;
+      }
+
+      /* ---------- SECTION SHARED ---------- */
+      section {
+        padding: 96px 0;
+      }
+
+      .section-head {
+        max-width: 620px;
+        margin-bottom: 54px;
+      }
+
+      .section-head h2 {
+        font-size: clamp(2rem, 3.4vw, 2.7rem);
+        margin-top: 14px;
+      }
+
+      .section-head p {
+        margin-top: 14px;
+        color: var(--ink-soft);
+        font-size: 1.05rem;
+        line-height: 1.65;
+      }
+
+      .center {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* ---------- ABOUT / WHAT IS ALPHA ---------- */
+      #about {
+        background: var(--paper);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .about-copy p {
+        color: var(--ink-soft);
+        line-height: 1.75;
+        font-size: 1.02rem;
+      }
+
+      .about-copy p + p {
+        margin-top: 16px;
+      }
+
+      .pull-quote {
+        margin-top: 26px;
+        padding: 20px 22px;
+        border-left: 3px solid var(--accent);
+        background: rgba(226, 98, 47, 0.06);
+        border-radius: 0 14px 14px 0;
+        font-family: "Fraunces", serif;
+        font-style: italic;
+        font-size: 1.15rem;
+        color: var(--ink);
+      }
+
+      .cards {
+        display: grid;
+        gap: 18px;
+      }
+
+      .card {
+        background: var(--cream);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 22px;
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow);
+      }
+
+      .card .icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--accent), var(--plum));
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .card .icon svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      .card h3 {
+        font-family: "Inter", sans-serif;
+        font-size: 1.02rem;
+        font-weight: 700;
+      }
+
+      .card p {
+        margin-top: 6px;
+        color: var(--ink-soft);
+        font-size: 0.92rem;
+        line-height: 1.55;
+      }
+
+      /* ---------- GALLERY ---------- */
+      #gallery {
+        background: var(--cream);
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 130px;
+        grid-auto-flow: dense;
+        gap: 16px;
+      }
+
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--radius);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.06);
+      }
+
+      .gallery-item.big {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+
+      .gallery-item.tall {
+        grid-row: span 2;
+      }
+
+      .gallery-tag {
+        position: absolute;
+        left: 14px;
+        bottom: 14px;
+        max-width: calc(100% - 28px);
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(255, 253, 250, 0.92);
+        backdrop-filter: blur(6px);
+        font-family: "Fraunces", serif;
+        font-style: italic;
+        font-size: 0.85rem;
+        color: var(--ink);
+        box-shadow: 0 8px 20px -10px rgba(36, 26, 18, 0.4);
+      }
+
+      @media (max-width: 860px) {
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+          grid-auto-rows: 150px;
+        }
+
+        .gallery-item.big {
+          grid-column: span 2;
+          grid-row: span 2;
+        }
+      }
+
+      /* ---------- BANNER ---------- */
+      .banner {
+        background: linear-gradient(120deg, var(--plum), var(--accent-dark));
+        color: #fff9f2;
+        text-align: center;
+        padding: 80px 24px;
+      }
+
+      .banner h2 {
+        font-size: clamp(1.7rem, 3.6vw, 2.6rem);
+        max-width: 780px;
+        margin: 0 auto;
+        line-height: 1.3;
+      }
+
+      .banner p {
+        margin-top: 16px;
+        opacity: 0.85;
+        font-weight: 500;
+      }
+
+      /* ---------- FAQ ---------- */
+      .faq-list {
+        max-width: 760px;
+        margin: 0 auto;
+        display: grid;
+        gap: 14px;
+      }
+
+      .faq-item {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        overflow: hidden;
+      }
+
+      .faq-q {
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 20px 22px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 1rem;
+        color: var(--ink);
+      }
+
+      .faq-q .plus {
+        flex-shrink: 0;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        border: 1.5px solid var(--line);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        transition: transform 0.25s ease, background 0.25s ease;
+      }
+
+      .faq-q .plus::before,
+      .faq-q .plus::after {
+        content: "";
+        position: absolute;
+        background: var(--ink);
+        transition: transform 0.25s ease, opacity 0.25s ease;
+      }
+
+      .faq-q .plus::before {
+        width: 10px;
+        height: 1.5px;
+      }
+
+      .faq-q .plus::after {
+        width: 1.5px;
+        height: 10px;
+      }
+
+      .faq-item.open .faq-q .plus {
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+
+      .faq-item.open .faq-q .plus::before,
+      .faq-item.open .faq-q .plus::after {
+        background: #fff;
+      }
+
+      .faq-item.open .faq-q .plus::after {
+        transform: scaleY(0);
+      }
+
+      .faq-a {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        padding: 0 22px;
+      }
+
+      .faq-a p {
+        color: var(--ink-soft);
+        line-height: 1.65;
+        padding-bottom: 20px;
+        font-size: 0.96rem;
+      }
+
+      .faq-item.open .faq-a {
+        max-height: 260px;
+      }
+
+      /* ---------- JOIN ---------- */
+      #join {
+        background: var(--paper);
+        border-top: 1px solid var(--line);
+      }
+
+      .join-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+
+      .join-card {
+        background: var(--cream);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 30px 26px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .join-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+      }
+
+      .join-card .icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--accent), var(--plum));
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .join-card .icon svg {
+        width: 26px;
+        height: 26px;
+      }
+
+      .join-card h3 {
+        font-family: "Inter", sans-serif;
+        font-size: 1.05rem;
+        font-weight: 700;
+      }
+
+      .join-card p {
+        color: var(--ink-soft);
+        font-size: 0.92rem;
+        line-height: 1.55;
+      }
+
+      .join-note {
+        text-align: center;
+        margin-top: 32px;
+        color: var(--ink-soft);
+        font-size: 0.9rem;
+      }
+
+      .join-note strong {
+        color: var(--ink);
+      }
+
+      /* ---------- FOOTER ---------- */
+      footer {
+        background: var(--ink);
+        color: #ecdfd0;
+        padding: 56px 0 30px;
+      }
+
+      .footer-top {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        align-items: flex-start;
+        padding-bottom: 34px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+        font-size: 1.15rem;
+        color: #fff9f2;
+      }
+
+      .footer-brand p {
+        margin-top: 10px;
+        color: #cdbba6;
+        font-size: 0.88rem;
+        max-width: 320px;
+        line-height: 1.55;
+      }
+
+      .footer-cols {
+        display: flex;
+        gap: 60px;
+        flex-wrap: wrap;
+      }
+
+      .footer-col h4 {
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #cdbba6;
+        margin-bottom: 14px;
+      }
+
+      .footer-col a {
+        display: block;
+        color: #ecdfd0;
+        font-size: 0.92rem;
+        margin-bottom: 10px;
+        opacity: 0.9;
+        transition: opacity 0.2s ease;
+      }
+
+      .footer-col a:hover {
+        opacity: 1;
+        color: var(--gold);
+      }
+
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-top: 24px;
+        font-size: 0.8rem;
+        color: #9c8b78;
+      }
+
+      /* ---------- REVEAL ANIMATION ---------- */
+      [data-reveal] {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+
+      [data-reveal].visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ---------- RESPONSIVE ---------- */
+      @media (max-width: 860px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .facts-strip {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .join-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 720px) {
+        nav.nav-links {
+          position: fixed;
+          inset: 62px 0 0 0;
+          background: var(--cream);
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0;
+          padding: 10px 24px 24px;
+          transform: translateY(-12px);
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.2s ease, transform 0.2s ease;
+          border-top: 1px solid var(--line);
+        }
+
+        nav.nav-links.open {
+          opacity: 1;
+          transform: translateY(0);
+          pointer-events: auto;
+        }
+
+        nav.nav-links a.link {
+          width: 100%;
+          padding: 14px 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .nav-cta .btn-ghost {
+          display: none;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+
+        .hero {
+          padding: 60px 0 50px;
+        }
+
+        .facts-strip {
+          grid-template-columns: 1fr;
+          padding: 20px;
+        }
+
+        section {
+          padding: 64px 0;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-actions .btn {
+          width: 100%;
+        }
+      }
+    </style>
   </head>
   <body>
-    <main>
-      <h1>The Beautiful Love of Jesus</h1>
-      <p>Jesus' love is gentle, endless, and full of grace.</p>
-      <p>
-        It brings hope to the weary, forgiveness to the broken, and light to
-        every heart that seeks Him.
-      </p>
+    <!-- ================= NAV ================= -->
+    <header class="site-nav">
+      <div class="nav-inner container">
+        <a href="#top" class="brand">
+          <img
+            src="alpha-logo.svg"
+            alt="Alpha"
+            class="logo-img"
+          />
+          <span class="brand-text">
+            <span class="sub">Open to All Campus Students</span>
+          </span>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+          <a class="link" href="#about">About</a>
+          <a class="link" href="#gallery">Gallery</a>
+          <a class="link" href="#faq">FAQ</a>
+          <a class="link" href="#join">Join Us</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a class="btn btn-ghost" href="#join">Contact</a>
+          <a class="btn btn-primary" href="#join">Reserve Your Spot</a>
+          <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- ================= HERO ================= -->
+      <section class="hero">
+        <div class="container hero-inner">
+          <span class="eyebrow">Alpha on Campus</span>
+          <h1>Big questions. Good food.<br /><em>No pressure.</em></h1>
+          <p class="lede">
+            Alpha is a free, no-strings-attached space where students from
+            every campus gather over a shared meal to ask honest questions
+            about life, faith, and meaning — no experience or beliefs
+            required, just curiosity.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#join">Reserve Your Spot</a>
+            <a class="btn btn-ghost" href="#about">What is Alpha?</a>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="facts-strip" data-reveal>
+            <div class="fact">
+              <span class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              </span>
+              <div>
+                <div class="label">When</div>
+                <div class="value">Wednesdays<br /><span class="muted">starting the first week of October</span></div>
+              </div>
+            </div>
+            <div class="fact">
+              <span class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </span>
+              <div>
+                <div class="label">Time</div>
+                <div class="value">6:00 PM<br /><span class="muted">~90 minutes</span></div>
+              </div>
+            </div>
+            <div class="fact">
+              <span class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <div>
+                <div class="label">Where</div>
+                <div class="value">[Building, Room]<br /><span class="muted">Saint Mary's University</span></div>
+              </div>
+            </div>
+            <div class="fact">
+              <span class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8Z"/><path d="M6 1v3M10 1v3M14 1v3"/></svg>
+              </span>
+              <div>
+                <div class="label">Cost</div>
+                <div class="value">Free<br /><span class="muted">dinner included every week</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ABOUT ================= -->
+      <section id="about">
+        <div class="container">
+          <div class="about-grid">
+            <div class="about-copy" data-reveal>
+              <span class="eyebrow">What is Alpha?</span>
+              <h2 style="margin-top:14px;">A conversation, not a lecture.</h2>
+              <p>
+                Alpha runs in cities, campuses, and homes all over the world —
+                and now it's coming to campus, hosted at Saint Mary's
+                University and open to students from any school. Each session
+                starts with a meal, moves into a short talk on a big question
+                (Is there a God? Why does the world have so much suffering?
+                What's the point of life?), and ends in small-group
+                conversation where every question is welcome and nobody's put
+                on the spot.
+              </p>
+              <p>
+                You don't need to know anything about faith, believe
+                anything in particular, or come back every week. Come as you
+                are, bring a friend, and see where the conversation goes.
+              </p>
+              <div class="pull-quote">
+                "No pressure, no follow-up, no charge — just an honest space
+                to ask what you've always wondered about."
+              </div>
+            </div>
+
+            <div class="cards" data-reveal>
+              <div class="card">
+                <span class="icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8Z"/></svg>
+                </span>
+                <div>
+                  <h3>Share a free meal</h3>
+                  <p>Every session opens with dinner — good food is where good conversation starts.</p>
+                </div>
+              </div>
+              <div class="card">
+                <span class="icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                </span>
+                <div>
+                  <h3>Watch a short talk</h3>
+                  <p>A relaxed, honest look at a different big question each week — no jargon, no assumptions.</p>
+                </div>
+              </div>
+              <div class="card">
+                <span class="icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </span>
+                <div>
+                  <h3>Join the discussion</h3>
+                  <p>Small groups, real talk. Say as much or as little as you want — every question counts.</p>
+                </div>
+              </div>
+              <div class="card">
+                <span class="icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </span>
+                <div>
+                  <h3>All backgrounds welcome</h3>
+                  <p>Whether you're curious, skeptical, or somewhere in between — you belong here.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= GALLERY ================= -->
+      <section id="gallery">
+        <div class="container">
+          <div class="section-head center">
+            <span class="eyebrow">A look inside</span>
+            <h2>What a Wednesday night actually looks like.</h2>
+            <p>
+              Real photos from real Alpha nights — good food, full couches,
+              and conversations that go longer than planned.
+            </p>
+          </div>
+
+          <div class="gallery-grid" data-reveal>
+            <div class="gallery-item big">
+              <img src="images/gallery-1.jpg" alt="Friends sharing breakfast pastries and coffee around a tray at Alpha" loading="lazy" />
+              <span class="gallery-tag">Not perfect, just honest conversations.</span>
+            </div>
+            <div class="gallery-item tall">
+              <img src="images/gallery-9.jpg" alt="A group of students laughing together at an Alpha session" loading="lazy" />
+            </div>
+            <div class="gallery-item">
+              <img src="images/gallery-3.jpg" alt="Three students laughing over dinner" loading="lazy" />
+            </div>
+            <div class="gallery-item">
+              <img src="images/gallery-2.jpg" alt="A student at an Alpha session" loading="lazy" />
+            </div>
+            <div class="gallery-item tall">
+              <img src="images/gallery-4.jpg" alt="A large group of students gathered on a couch at Alpha" loading="lazy" />
+              <span class="gallery-tag">Could ask anything.</span>
+            </div>
+            <div class="gallery-item">
+              <img src="images/gallery-5.jpg" alt="Students chatting over dinner at Alpha" loading="lazy" />
+            </div>
+            <div class="gallery-item">
+              <img src="images/gallery-6.jpg" alt="A student laughing while eating noodles at Alpha" loading="lazy" />
+            </div>
+            <div class="gallery-item">
+              <img src="images/gallery-7.jpg" alt="A student laughing during a conversation at Alpha" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= BANNER ================= -->
+      <section class="banner" data-reveal>
+        <div class="container">
+          <h2>You don't need the right answers to show up — just the questions.</h2>
+          <p>Free to attend · Open to all campus students · No commitment required</p>
+        </div>
+      </section>
+
+      <!-- ================= FAQ ================= -->
+      <section id="faq">
+        <div class="container">
+          <div class="section-head center">
+            <span class="eyebrow">Good to know</span>
+            <h2>Frequently asked questions</h2>
+            <p>
+              New to Alpha? Here's what to expect before you come to your
+              first session.
+            </p>
+          </div>
+
+          <div class="faq-list" data-reveal>
+            <div class="faq-item open">
+              <button class="faq-q">
+                Do I need to know anything about the Bible or Christianity?
+                <span class="plus"></span>
+              </button>
+              <div class="faq-a">
+                <p>
+                  Not at all. Alpha is built for people who are exploring
+                  from scratch — whether you've never opened a Bible or grew
+                  up in church. Every talk starts from the beginning, no
+                  prior knowledge assumed.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q">
+                Will I have to pray, sing, or say anything out loud?
+                <span class="plus"></span>
+              </button>
+              <div class="faq-a">
+                <p>
+                  Never. There's no pressure to participate in anything you
+                  aren't comfortable with. You're welcome to just listen and
+                  observe for as many sessions as you like.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q">
+                Is Alpha only for Christians?
+                <span class="plus"></span>
+              </button>
+              <div class="faq-a">
+                <p>
+                  Not at all — most people who come are exploring, curious,
+                  or simply skeptical. Alpha is for anyone with questions
+                  about life and faith, whatever you currently believe.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q">
+                Is there a cost to attend?
+                <span class="plus"></span>
+              </button>
+              <div class="faq-a">
+                <p>
+                  Alpha is completely free, including dinner every week.
+                  There's no catch and nothing to sign up to pay for.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q">
+                What if I can only make it to some sessions?
+                <span class="plus"></span>
+              </button>
+              <div class="faq-a">
+                <p>
+                  Come whenever you can — every session stands on its own,
+                  so missing a week (or starting late) is no problem at all.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q">
+                Do I need to be a Saint Mary's University student?
+                <span class="plus"></span>
+              </button>
+              <div class="faq-a">
+                <p>
+                  Not at all. Alpha is open to students from any campus —
+                  bring friends from other schools, no SMU enrollment
+                  required.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q">
+                Can I bring a friend?
+                <span class="plus"></span>
+              </button>
+              <div class="faq-a">
+                <p>
+                  Please do! Alpha is even better with people you know, and
+                  friends of all backgrounds and beliefs are always welcome.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= JOIN ================= -->
+      <section id="join">
+        <div class="container">
+          <div class="section-head center">
+            <span class="eyebrow">Ready to come?</span>
+            <h2>Reserve your spot</h2>
+            <p>
+              Sign up in under a minute, or reach out with any questions —
+              we'd love to save you a seat at the table.
+            </p>
+          </div>
+
+          <div class="join-grid" data-reveal>
+            <!-- SIGNUP_LINK — replace href="#" with your Google Form / Eventbrite URL -->
+            <a class="join-card" href="#">
+              <span class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              </span>
+              <h3>Sign-up form</h3>
+              <p>Reserve your seat and let us know if you have any dietary needs.</p>
+            </a>
+
+            <a class="join-card" href="https://www.instagram.com/campus_alpha?stkn=eG93cWtjeTMzNzc3" target="_blank" rel="noopener">
+              <span class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37a4 4 0 1 1-7.914 1.174A4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+              </span>
+              <h3>Follow along</h3>
+              <p>@campus_alpha — updates, reminders, and behind-the-scenes.</p>
+            </a>
+
+            <!-- EMAIL_LINK — replace with your real contact email -->
+            <a class="join-card" href="mailto:alpha@smu.example">
+              <span class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+              </span>
+              <h3>Email us</h3>
+              <p>Questions about Alpha? Reach the team at [alpha@smu.example].</p>
+            </a>
+          </div>
+
+          <p class="join-note">
+            <strong>First time?</strong> Just show up — walk-ins are always
+            welcome too.
+          </p>
+        </div>
+      </section>
     </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+      <div class="container">
+        <div class="footer-top">
+          <div>
+            <div class="footer-brand">
+              <img
+                src="alpha-logo.svg"
+                alt="Alpha on Campus"
+                class="logo-img"
+              />
+            </div>
+            <p>
+              A free, student-led space to explore life's biggest questions
+              — open to everyone, every background, every question.
+            </p>
+          </div>
+
+          <div class="footer-cols">
+            <div class="footer-col">
+              <h4>Explore</h4>
+              <a href="#about">About Alpha</a>
+              <a href="#gallery">Gallery</a>
+              <a href="#faq">FAQ</a>
+              <a href="#join">Reserve a spot</a>
+            </div>
+            <div class="footer-col">
+              <h4>Connect</h4>
+              <a href="https://www.instagram.com/campus_alpha?stkn=eG93cWtjeTMzNzc3" target="_blank" rel="noopener">Instagram</a>
+              <a href="mailto:alpha@smu.example">Email us</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>&copy; 2026 Alpha at Saint Mary's University.</span>
+          <span>Made with care for the whole campus community.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile nav toggle
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+      });
+      navLinks.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => navLinks.classList.remove("open"))
+      );
+
+      // FAQ accordion
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        item.querySelector(".faq-q").addEventListener("click", () => {
+          const isOpen = item.classList.contains("open");
+          document
+            .querySelectorAll(".faq-item")
+            .forEach((i) => i.classList.remove("open"));
+          if (!isOpen) item.classList.add("open");
+        });
+      });
+
+      // Scroll reveal
+      const revealEls = document.querySelectorAll("[data-reveal]");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      revealEls.forEach((el) => observer.observe(el));
+    </script>
   </body>
 </html>
